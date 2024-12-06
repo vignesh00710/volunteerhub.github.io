@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Volunteering Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Volunteer</h1>
+        <nav>
+            <a href="#events">Events</a>
+            <a href="#profile">User Profile</a>
+            <a href="#preferences">Preferences</a>
+            <a href="#donation">Donation</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h2>Find Local Volunteering Opportunities</h2>
+            <p>Connect with non-profits and make a difference in your community.</p>
+        </section>
+
+        <section id="events">
+            <h3>Upcoming Events</h3>
+            <div class="event-list">
+                <!-- Example Events -->
+                <div class="event-item">
+                    <h4>Beach Cleanup</h4>
+                    <p>Date: October 28, 2024</p>
+                    <p>Location: Sunset Beach</p>
+                    <button onclick="signUp('Beach Cleanup')">Sign Up</button>
+                </div>
+                <div class="event-item">
+                    <h4>Community Garden Planting</h4>
+                    <p>Date: November 5, 2024</p>
+                    <p>Location: Central Park</p>
+                    <button onclick="signUp('Community Garden Planting')">Sign Up</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="profile">
+            <h3>User Profile</h3>
+            <p>Name: k vignesh</p>
+            <p>Email: vignesh@gmail.com</p>
+            <p>Volunteer Hours: 12</p>
+            <button onclick="editProfile()">Edit Profile</button>
+        </section>
+
+        <section id="preferences">
+            <h3>Your Preferences</h3>
+            <p>Fill out your address, availability, and interests to receive personalized volunteering opportunities.</p>
+            <form onsubmit="savePreferences(event)">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="availability">Time of Availability:</label>
+                <input type="text" id="availability" name="availability" required>
+
+                <label for="interests">Interests:</label>
+                <input type="text" id="interests" name="interests" required>
+
+                <button type="submit">Save Preferences</button>
+            </form>
+            <p id="preferences-message"></p>
+        </section>
+
+        <section id="donation">
+            <h3>Make a Donation</h3>
+            <p>Your donations help us support more community projects and events.</p>
+            <form onsubmit="handleDonation(event)">
+                <label for="donation-amount">Donation Amount ($):</label>
+                <input type="number" id="donation-amount" name="donation-amount" min="1" required>
+                <button type="submit">Donate</button>
+            </form>
+            <p id="donation-message"></p>
+        </section>
+
+        <section id="about">
+            <h3>About Us</h3>
+            <p>Volunteer Hub connects local non-profits with volunteers eager to contribute to their communities.</p>
+        </section>
+
+        <section id="contact">
+            <h3>Contact</h3>
+            <p>Email: contact@volunteerhub.com</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Volunteer Hub. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

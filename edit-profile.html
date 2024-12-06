@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Edit Profile</h1>
+    </header>
+
+    <main>
+        <section id="edit-profile-section">
+            <h2>Update Your Information</h2>
+            <form onsubmit="saveProfile(event)">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="userId">User ID:</label>
+                <input type="text" id="userId" name="userId" required>
+
+                <button type="submit">Save Changes</button>
+            </form>
+            <p id="save-message"></p>
+            <button onclick="goBack()">Back to Profile</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Volunteer Hub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Pre-fill the form with current user data (example data; replace with actual data retrieval logic)
+        document.getElementById('name').value = localStorage.getItem('name') || 'k vignesh';
+        document.getElementById('email').value = localStorage.getItem('email') || 'vignesh@gmail.com';
+        document.getElementById('userId').value = localStorage.getItem('userId') || 'user123';
+
+        // Save profile changes
+        function saveProfile(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const userId = document.getElementById('userId').value;
+
+            // Save the data locally (or send it to a backend)
+            localStorage.setItem('name', name);
+            localStorage.setItem('email', email);
+            localStorage.setItem('userId', userId);
+
+            document.getElementById('save-message').textContent = 'Profile updated successfully!';
+        }
+
+        // Navigate back to the main profile page
+        function goBack() {
+            window.location.href = 'index.html#profile'; // Update with the correct path to your main page
+        }
+    </script>
+</body>
+</html>
